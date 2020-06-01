@@ -1,3 +1,7 @@
+// Distributed under the MIT License.
+// See LICENSE.txt for details.
+#include "Left.hpp"
+
 #include <functional>
 
 // Integrate function f using the trapezoid rule

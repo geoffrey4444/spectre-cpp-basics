@@ -1,3 +1,6 @@
+// Distributed under the MIT License.
+// See LICENSE.txt for details.
+
 #include <functional>
 
 /// Integrate function `func` using the left point rule, using constant spacing

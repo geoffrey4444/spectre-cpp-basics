@@ -1,3 +1,8 @@
+// Distributed under the MIT License.
+// See LICENSE.txt for details.
+
+#include "Trap.hpp"
+
 #include <cmath>
 #include <functional>
 #include <iomanip>
