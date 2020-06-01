@@ -18,7 +18,7 @@ Here are some topics that I might cover (I will adjust content and pacing depend
 * Classes, structs, and inheritance, including static functions and virtual functions
 * Introduce template programming
 * Iterators and some basic STL stuff, like std::array and std::vector
-* GSL, gsl::at, gsl::not_null, pass by reference & pass by value, signalin nan
+* GSL, gsl::at, gsl::not_null, pass by reference & pass by value, signaling nan
 * Basic template metaprogramming/Brigand
 * Lambdas
 * Variadic programming & parameter packs
