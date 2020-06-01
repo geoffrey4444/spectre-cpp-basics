@@ -8,7 +8,7 @@ The idea is to introduce some of the C++ that comes up a lot in spectre. For eac
 This is not meant to be an authoritative or complete introduction to these topics. I'm still learning myself, and I'm a physicist, not a C++ professional or a computer scientist. But I hope that these introductions will help my students and other new spectre developers tackle the learning curve a bit more easily.
 
 Prerequisites:
- * I'm assuming that students have basic programming knowledge in any language (e.g. python). Defining variables, if/else, for/while loops, defining your own functions, etc.
+ * I'm assuming that students have basic programming knowledge in any language (e.g. python). Defining variables, if/else, for/while loops, defining your own functions, etc. That said, no topic is too basic to ask about in this course!
  * I'm also assuming that students have some environment where they can compile and run C++-17 programs.
  * The above prerequisites are sufficent for running the toy examples we'll develop. But to apply them to spectre, I also assume students are able to checkout, compile, and run the tests on spectre. Instructions here: (https://spectre-code.org/installation.html)
 
