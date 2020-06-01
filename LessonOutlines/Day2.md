@@ -25,9 +25,13 @@ const member functions prevents this
 
 - Challenge: change static variable to static function that takes no arguments and returns the number of sides
 
+- Split into hpp, cpp ... #pragma once to avoid multiple definitions of rect
+
 - Make class square inherit from rectangle (': public Rectangle' after class name), different constructor
 
+- Make new base class poly with virtual functions rect inherits from, overrides
 
+- Challenge: make a RightTriangle class
 
 
 
