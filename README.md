@@ -9,7 +9,8 @@ This is not meant to be an authoritative or complete introduction to these topic
 
 Prerequisites:
  * I'm assuming that students have basic programming knowledge in any language (e.g. python). Defining variables, if/else, for/while loops, defining your own functions, etc.
- * I'm also assuming that students have some environment where they can compile and run C++ programs.
+ * I'm also assuming that students have some environment where they can compile and run C++-17 programs.
+ * The above prerequisites are sufficent for running the toy examples we'll develop. But to apply them to spectre, I also assume students are able to checkout, compile, and run the tests on spectre. Instructions here: (https://spectre-code.org/installation.html)
 
 Here are some topics that I might cover (I will adjust content and pacing depending on how things go):
 
