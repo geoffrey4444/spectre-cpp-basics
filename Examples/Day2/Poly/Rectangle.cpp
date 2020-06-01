@@ -3,8 +3,6 @@
 
 #include "Rectangle.hpp"
 
-#include <cstddef>
-
 Rectangle::Rectangle(const double length, const double width) noexcept
     : length_(length), width_(width){}
 

@@ -3,7 +3,9 @@
 
 #include <iostream>
 
+#include "Polygon.hpp"
 #include "Rectangle.hpp"
+#include "RightTriangle.hpp"
 #include "Square.hpp"
 
 int main() {
@@ -24,6 +26,10 @@ int main() {
 
   Square sq{length};
   std::cout << "Square perimeter: " << sq.perimeter() << "\n";
+
+  RightTriangle tri{3.0, 4.0};
+  std::cout << "Right triangle perimeter: " << tri.perimeter() << "\n";
+  std::cout << "Right triangle area: " << tri.area() << "\n";
 
   return 0;
 }

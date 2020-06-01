@@ -13,12 +13,16 @@
 - Add evil_print() function that prints x then changes it, show how const
 saves you from evil_print()
 
+- const and constexpr for variables
+
 - Add function to do left integral
 - Add correction to do trap instead of left, show how error drops
 
 - Add overload taking std::function<>, instead of hard-coding function f
 
 - Challenge: add your own function that returns exp(x)
+
+- noexcept: enables compiler optimizations, says your code will not throw an exception
 
 - Factor trap into hpp, cpp
 

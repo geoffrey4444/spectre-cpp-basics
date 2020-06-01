@@ -4,12 +4,14 @@
 
 #include <cstddef>
 
-class Rectangle {
+#include "Polygon.hpp"
+
+class Rectangle : public Polygon {
  public:
   Rectangle(double length, double width) noexcept;
 
-  double perimeter() const noexcept;
-  double area() const noexcept;
+  double perimeter() const noexcept override;
+  double area() const noexcept override;
 
   static const size_t number_of_sides() { return 4; }
 

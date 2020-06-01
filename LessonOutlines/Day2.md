@@ -29,9 +29,15 @@ const member functions prevents this
 
 - Make class square inherit from rectangle (': public Rectangle' after class name), different constructor
 
-- Make new base class poly with virtual functions rect inherits from, overrides
+- Make new base class polygon with pure virtual functions for area and perimeter
 
-- Challenge: make a RightTriangle class
+- Make rect inherit from polygon, override virtual functions
+
+- Override keyword: ensures that base class functions are pure virtual. If base class function signatures change, this will catch it, instead of assuming you just added an overload instead
+
+- Challenge: make a RightTriangle class that inherits from Polygon, and print a right triangle's area and perimeter
+
+
 
 
 
