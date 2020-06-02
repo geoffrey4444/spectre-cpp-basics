@@ -27,6 +27,14 @@ int main() {
   Square sq{length};
   std::cout << "Square perimeter: " << sq.perimeter() << "\n";
 
+  // Note: static functions can't be virtual, and the base class does not
+  // define number_of_sides(). You must define number_of_sides() for each
+  // derived class, and you can't call them for objects whose type is just the
+  // base class type. The following fails to compile for this reason:
+  // std::cout << "Square number of sides: "
+  //           << static_cast<const Polygon&>(sq).number_of_sides();
+  std::cout << "Square number of sides: " << sq.number_of_sides() << "\n";
+
   RightTriangle tri{3.0, 4.0};
   std::cout << "Right triangle perimeter: " << tri.perimeter() << "\n";
   std::cout << "Right triangle area: " << tri.area() << "\n";
