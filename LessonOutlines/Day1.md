@@ -18,7 +18,7 @@ saves you from evil_print()
 - Add function to do left integral
 - Add correction to do trap instead of left, show how error drops
 
-- Add overload taking std::function<>, instead of hard-coding function f
+- Add overload taking function pointer, instead of hard-coding function f
 
 - Challenge: add your own function that returns exp(x)
 

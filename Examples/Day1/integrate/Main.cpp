@@ -2,7 +2,6 @@
 // See LICENSE.txt for details.
 
 #include <cmath>
-#include <functional>
 #include <iomanip>
 #include <iostream>
 

@@ -2,7 +2,6 @@
 // See LICENSE.txt for details.
 
 #include <cmath>
-#include <functional>
 #include <iomanip>
 #include <iostream>
 
@@ -18,13 +17,11 @@ double f(const double x) noexcept {
   return sqrt(fabs(1.0 - x * x));
 }
 
-double g(const double x) noexcept {
-  return exp(x);
-}
+double g(const double x) noexcept { return exp(x); }
 
 // Integrate function f using the trapezoid rule
-double trap(const std::function<double(const double)>& func, const double dx,
-            const double a, const double b) noexcept {
+double trap(double (*const func)(double), const double dx, const double a,
+            const double b) noexcept {
   double result = 0.0;
   for (double x = a; x < b; x += dx) {
     result += func(x) * dx;
@@ -51,7 +48,7 @@ int main() {
   const double result_g = 1.0 + trap(g, dx, a, b);
 
   std::cout << std::setprecision(15);
- 
+
   std::cout << "result = " << result << "\n";
   std::cout << "result - pi = " << result - M_PI << "\n";
   std::cout << "result - result_f = " << result - result_f << "\n";
