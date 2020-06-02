@@ -6,7 +6,7 @@
 
 class Rectangle {
  public:
-  Rectangle(double length, double width) noexcept
+  Rectangle(const double length, const double width) noexcept
       : length_(length), width_(width) {}
 
   double perimeter() const noexcept { return 2.0 * (length_ + width_); }
@@ -29,7 +29,7 @@ class Rectangle {
 
 class Square : public Rectangle {
  public:
-  Square(double length) noexcept : Rectangle(length, length) {}
+  Square(const double length) noexcept : Rectangle(length, length) {}
 };
 
 int main() {
