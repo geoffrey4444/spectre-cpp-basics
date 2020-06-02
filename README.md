@@ -23,3 +23,4 @@ Here are some topics that I might cover (I will adjust content and pacing depend
 * Lambdas
 * Variadic programming & parameter packs
 * Grab bag: ternary operator, auto, trailing return type, static_cast<>, ...
+* Minimizing allocations, move and copy semantics
