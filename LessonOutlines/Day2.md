@@ -37,7 +37,7 @@ const member functions prevents this
 
 - Challenge: make a RightTriangle class that inherits from Polygon, and print a right triangle's area and perimeter
 
-
+- Spectre example: MathFunctions
 
 
 
