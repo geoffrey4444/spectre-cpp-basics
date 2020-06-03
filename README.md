@@ -16,6 +16,7 @@ Here are some topics that I might cover (I will adjust content and pacing depend
 
 * Free functions, declaration vs definition, const, constexpr, noexcept
 * Classes, structs, and inheritance, including static functions and virtual functions
+* Braces for initialization
 * Introduce template programming, square(), cube(), and inline and SPECTRE_ALWAYS_INLINE
 * Iterators and some basic STL stuff, like std::array and std::vector
 * GSL, gsl::at, gsl::not_null, pass by reference & pass by value, signaling nan
