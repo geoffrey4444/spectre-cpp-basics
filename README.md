@@ -24,3 +24,5 @@ Here are some topics that I might cover (I will adjust content and pacing depend
 * Variadic programming & parameter packs
 * Grab bag: ternary operator, auto, trailing return type, static_cast<>, ...
 * Minimizing allocations, move and copy semantics
+
+The content is divided into lessons, but each lesson might take more than one meeting. Solutions prepared in advance for each lesson are in `Solutions/`, while the actual code written during each meeting is in `MeetingCodes/`.
