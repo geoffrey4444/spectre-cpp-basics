@@ -1,4 +1,4 @@
-## Day 2
+## Lesson 2
 
 - Start with Hello
 
