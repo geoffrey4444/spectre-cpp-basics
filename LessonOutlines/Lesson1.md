@@ -21,7 +21,7 @@ saves you from evil_print()
 
 - constexpr example
 
-- 
+- remake our example computing pi with the left-point rule
 
 - Add correction to do trap instead of left, show how error drops
 
