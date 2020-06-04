@@ -19,6 +19,10 @@ saves you from evil_print()
 
 ### Meeting 2
 
+- constexpr example
+
+- 
+
 - Add correction to do trap instead of left, show how error drops
 
 - Add overload taking function pointer, instead of hard-coding function f
