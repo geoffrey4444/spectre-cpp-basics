@@ -7,7 +7,7 @@ const double slow_init() noexcept {
   for (size_t i = 0; i < 100000; ++i) {
     turtle += 1;
   }
-  constexpr double result = 4.0;
+  const double result = static_cast<double>(turtle);
   return result;
 }
 
@@ -21,7 +21,7 @@ constexpr double slow_init_constexpr() noexcept {
   for (size_t i = 0; i < 100000; ++i) {
     turtle += 1;
   }
-  constexpr double result = 4.0;
+  const double result = static_cast<double>(turtle);
   return result;
 }
 
