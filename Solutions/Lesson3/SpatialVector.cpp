@@ -6,14 +6,16 @@
 #include <valarray>  // Note: in spectre, never #include valarray
 using DataVector = std::valarray<double>;
 std::ostream& operator<<(std::ostream& os, const DataVector& vector) {
-  os << "[ ";
+  std::string output = "[";
   for (auto element : vector) {
-    os << element << " ";
+    output += to_string(element) + " ";
   }
-  os << "]";
+  output.pop_back();
+  output += "]";
+
+  os << output;
   return os;
 }
-
 
 namespace Frame {
 struct Grid {};
@@ -30,7 +32,7 @@ class SpatialVector {
       : data_{data} {}
 
   // Get a component, with run-time index checking
-  DataType get(const size_t i) const noexcept {
+  const auto& get(const size_t i) const noexcept {
     if (i < VolumeDim and i >= 0) {
       return data_[i];
     } else {
@@ -46,7 +48,7 @@ class SpatialVector {
 
 // Get a SpatialVector component, with compile-time index checking
 template <size_t Index, typename T>
-constexpr auto get(const T& vector) noexcept -> typename T::data_type {
+const auto& get(const T& vector) noexcept {
   static_assert(Index >= 0 and Index < T::volume_dim,
                 "Index should be nonnegative and less than VolumeDim");
   return vector.get(Index);
@@ -57,13 +59,12 @@ template <size_t VolumeDim, typename DataType, typename Fr>
 DataType dot_product(
     const SpatialVector<VolumeDim, DataType, Fr>& vector_a,
     const SpatialVector<VolumeDim, DataType, Fr>& vector_b) noexcept {
-  // Initialize to object of same type as vector_a's components, but with value
-  // of zero
-  DataType result = 0.0 * get<0>(vector_a);
-  for (size_t i = 0; i < VolumeDim; ++i) {
+  // Instead of initializing to zero and resetting, save time by assigning to
+  // the first term in the sum
+  DataType result{get<0>(vetor_a) * get<0>(vector_b)};
+  for (size_t i = 1; i < VolumeDim; ++i) {
     result += vector_a.get(i) * vector_b.get(i);
   }
-  return result;
 }
 
 int main() {

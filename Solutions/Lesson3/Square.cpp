@@ -1,8 +1,11 @@
+// Distributed under the MIT License.
+// See LICENSE.txt for details.
+
 #include <iostream>
 #include <string>
 
 template <typename T>
-T square(T x) noexcept {
+T square(const T& x) noexcept {
   return x * x;
 }
 

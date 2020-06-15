@@ -6,7 +6,7 @@
   - Using templates: std::array and std::vector demo
 
   - Build a complex struct using doubles for re, im part
-    - Add free functions for abs, arg, +, -, scale by real factor
+    - Add free functions for real, imag, abs, arg, +, -, scale by real factor
     - Challenge: Add functions for *, /
     - Add a print() function that prints complex numbers
   - Template Complex and free functions on type, try with double, int
@@ -26,12 +26,10 @@
         - constexpr auto get(), index is template parameter
         - store volume_dim, data_type in class
         - static assert
-        - call runtime get
-        - trailing return type
+        - call runtime get (return const auto&)
       - template on dimension
       - tempate on frame
       - Dot 
     - Challenge: implement cross product for SpatialVector, checking dimension is 2 or 3 at compile time
     - Challenge: implement SpacetimeVector
     - Challenge: implement spatial rank-2 tensor
-    
