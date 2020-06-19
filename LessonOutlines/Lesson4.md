@@ -1,0 +1,13 @@
+## Lesson 4
+  - Lambdas and functors
+    - Revisit trapezoid integrator
+      - Template on type instead of taking a function pointer
+      - Pass in a function
+      - Pass in a functor (struct with operator() const member function)
+      - Pass in a lambda
+  - Metaprogramming
+    - brigand library
+    - tmpl::list<>
+    - printing types at runtime
+    - printing types at compile time
+    - integer arithmetic, boolean logic at compile time
