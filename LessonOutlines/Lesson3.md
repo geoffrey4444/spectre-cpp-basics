@@ -5,16 +5,11 @@
     - Make a "double" and "halve" function
   - Using templates: std::array and std::vector demo
 
-  - Build a complex struct using doubles for re, im part
+  - Challenge: Build a complex struct using doubles for re, im part
     - Add free functions for real, imag, abs, arg, +, -, scale by real factor
     - Challenge: Add functions for *, /
     - Add a print() function that prints complex numbers
-  - Template Complex and free functions on type, try with double, int
-  - Import valarray as a stand-in for DataVector
-    - Overload operator<< for valarray
-    - Try out complex valarray
-    - Challenge: try a large complex DataVector...how big before it gets slow?
-    - Bonus challenge: Revisit the integrator from lesson 1. Change f(x) to a templated type instead of a function pointer type, and try passing in a struct that has operator() overloaded inside it
+    - Template Complex and free functions on type, try with double, int
 
   - SpatialVector
     - Start with a 3D vector of doubles
@@ -30,6 +25,15 @@
       - template on dimension
       - tempate on frame
       - Dot 
+
     - Challenge: implement cross product for SpatialVector, checking dimension is 2 or 3 at compile time
     - Challenge: implement SpacetimeVector
     - Challenge: implement spatial rank-2 tensor
+
+    - Import valarray as a stand-in for DataVector
+    - Overload operator<< for valarray
+    - Try out complex valarray
+    - Challenge: try a large complex DataVector...how big before it gets slow?
+    - Bonus challenge: Revisit the integrator from lesson 1. Change f(x) to a templated type instead of a function pointer type, and try passing in a struct that has operator() overloaded inside it
+
+
