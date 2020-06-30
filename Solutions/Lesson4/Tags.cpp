@@ -10,11 +10,6 @@ struct Area {};
 }  // namespace Rectangle
 
 template <typename T>
-struct DataBox {
-  static const double value;
-};
-
-template <typename T>
 double area(const T& box) noexcept {
   const double length =
       std::get<std::pair<Rectangle::Length, double>>(box).second;
