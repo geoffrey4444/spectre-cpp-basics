@@ -18,6 +18,22 @@
       - Pass in a function
       - Pass in a functor (struct with operator() const member function)
       - Pass in a lambda
+  - Lambdas continued
+    - Start with a simple print_container<T>() function
+    - std::iota to make a list of doubles
+    - apply_math_op closure that squares data in place
+    - power, pow, as an example of lambda capture
+    - const lambdas can't modify captures
+  - Intro to metaprogramming: TaggedTuple
+    - std::pair: pair of two things of differnt types (e.g. string, double)
+    - std::tuple: list of variables of different types (e.g. string, 2 doubles)
+    - idea: label items in memory to access (a "databox")
+      - spec: access at runtime (keys are strings)
+      - spectre: access at compile time (keys are types)
+      - realize this: a DataBox is a tuple of pairs, first type labels item, second type is the type of the item's value
+      - example: rectangle area
+      - example: if missing tag, you get a compiler error
+      - TaggedTuple version of the rectangle area example
   - Metaprogramming
     - brigand library
     - tmpl::list<>
