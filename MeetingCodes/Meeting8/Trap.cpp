@@ -15,11 +15,16 @@ double test_func(const double x) noexcept { return sqrt(fabs(1.0 - x * x)); }
 
 template <size_t Coef>
 struct test_struct {
-  static double coef = Coef;
+  static constexpr double coef = 5.0;
   double operator()(const double x) const noexcept {
     return coef * sqrt(fabs(1.0 - x * x));
   }
 };
+
+// By the way, compiler, please make this available at runtime so I don't get
+// a linker error...omit this line if not using the value at runtime
+template <size_t Coef>
+double test_struct<Coef>::coef;
 
 int main() {
   std::cout << 4.0 * trap(test_func, 0.0, 1.0, 1.0e-5) << "\n";
