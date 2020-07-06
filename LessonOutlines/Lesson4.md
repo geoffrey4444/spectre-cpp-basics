@@ -34,9 +34,3 @@
       - example: rectangle area
       - example: if missing tag, you get a compiler error
       - TaggedTuple version of the rectangle area example
-  - Metaprogramming
-    - brigand library
-    - tmpl::list<>
-    - printing types at runtime
-    - printing types at compile time
-    - integer arithmetic, boolean logic at compile time
