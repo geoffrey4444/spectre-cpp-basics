@@ -42,6 +42,15 @@ struct if_ : integral_constant<T::value_type, T::value>;
 template <class T, class F>
 struct if_<false, T, F> : integral_constant<F::value_type, F::value> {};
 
+template <typename T>
+struct factorial
+    : integral_constant<
+          typename T::value_type,
+          T::value * factorial<tmpl::integral_constant<typename T::value_type,
+                                                      (T::value)-1>>::value> {};
+template <typename T>
+struct factorial<tmpl::integral_constant<T, 0>> : integral_constant<T, 1> {};
+
 }  // namespace tmpl
 
 // Print out the type T at compile time by attempting to instantiate this.
@@ -69,8 +78,10 @@ int main() {
   TypeDisplayer<tmpl::bool_<tmpl::less<five, four>::value>> is_less;
 
   // Compiler error: prints which of two integers is smaller
-  using which_is_smaller = tmpl::if_<tmpl::less<five, four>::value, three, four>;
-  TypeDisplayer<tmpl::integral_constant<size_t, which_is_smaller::value>> result;
+  using which_is_smaller =
+      tmpl::if_<tmpl::less<five, four>::value, three, four>;
+  TypeDisplayer<tmpl::integral_constant<size_t, which_is_smaller::value>>
+      result;
 
   std::cout << sum::value << "\n";
   return 0;
