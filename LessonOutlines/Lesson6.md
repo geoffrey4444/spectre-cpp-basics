@@ -18,3 +18,6 @@
 - change [size / 2] to [size + 40]...undefined behavior
 - replace with gsl::at...code terminates
 - fix all [] to gsl::at
+
+- add a std::move version of the scale_scalar_field function
+- delete the copy construtor and copy assignment, and all uses of it

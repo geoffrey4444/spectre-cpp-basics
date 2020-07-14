@@ -3,8 +3,8 @@
 #include <gsl/gsl>
 #include <iostream>
 #include <numeric>
-#include <vector>
 #include <utility>
+#include <vector>
 
 class ScalarField {
  public:
@@ -24,10 +24,12 @@ class ScalarField {
   }
 
   // Copy initialize
-  ScalarField(const ScalarField& spatial_vector) noexcept = default;
+  // ScalarField(const ScalarField& spatial_vector) noexcept = default;
+  ScalarField(const ScalarField& spatial_vector) noexcept = delete;
 
   // Copy assign
-  ScalarField& operator=(const ScalarField& spatial_vector) noexcept = default;
+  // ScalarField& operator=(const ScalarField& spatial_vector) noexcept = default;
+  ScalarField& operator=(const ScalarField& spatial_vector) noexcept = delete;
 
   // Move initialize
   ScalarField(ScalarField&& spatial_vector) noexcept = default;
@@ -60,11 +62,19 @@ void scale_scalar_field(gsl::not_null<ScalarField*> lhs,
   }
 }
 
-ScalarField scale_scalar_field(const ScalarField& field,
+// ScalarField scale_scalar_field(const ScalarField& field,
+//                                const double scale_factor) noexcept {
+//   ScalarField result = field;
+//   scale_scalar_field(gsl::make_not_null(&result), scale_factor);
+//   return result;
+// }
+
+ScalarField scale_scalar_field(ScalarField&& field,
                                const double scale_factor) noexcept {
-  ScalarField result = field;
-  scale_scalar_field(gsl::make_not_null(&result), scale_factor);
-  return result;
+  for (auto it = field.x.begin(); it != field.x.end(); ++it) {
+    *it *= scale_factor;
+  }
+  return std::move(field);
 }
 
 int main() {
@@ -85,23 +95,41 @@ int main() {
                    .count()
             << " microsec)\n";
 
+  // std::cout << "Scaling a scalar field of size " << size << " by "
+  //           << scale_factor << " (by value)\n";
+  // start = std::chrono::high_resolution_clock::now();
+  //
+  // ScalarField field_b = scale_scalar_field(field_a, scale_factor);
+  //
+  // stop = std::chrono::high_resolution_clock::now();
+  // std::cout << gsl::at(field_b.x, size / 2) << " ("
+  //           << std::chrono::duration_cast<std::chrono::microseconds>(stop -
+  //                                                                    start)
+  //                  .count()
+  //           << " microsec)\n";
+
   std::cout << "Scaling a scalar field of size " << size << " by "
-            << scale_factor << " (by value)\n";
+            << scale_factor << " (by not_null)\n";
   start = std::chrono::high_resolution_clock::now();
-  ScalarField field_b = scale_scalar_field(field_a, scale_factor);
+
+  scale_scalar_field(gsl::make_not_null(&field_a), scale_factor);
+  
   stop = std::chrono::high_resolution_clock::now();
-  std::cout << gsl::at(field_b.x, size / 2) << " ("
+  std::cout << gsl::at(field_a.x, size / 2) << " ("
             << std::chrono::duration_cast<std::chrono::microseconds>(stop -
                                                                      start)
                    .count()
             << " microsec)\n";
 
   std::cout << "Scaling a scalar field of size " << size << " by "
-            << scale_factor << " (by not_null)\n";
+            << scale_factor << " (by std::move)\n";
   start = std::chrono::high_resolution_clock::now();
-  scale_scalar_field(gsl::make_not_null(&field_b), scale_factor);
+
+  ScalarField field_c{
+      std::move(scale_scalar_field(std::move(field_a), scale_factor))};
+
   stop = std::chrono::high_resolution_clock::now();
-  std::cout << gsl::at(field_b.x, size / 2) << " ("
+  std::cout << gsl::at(field_c.x, size / 2) << " ("
             << std::chrono::duration_cast<std::chrono::microseconds>(stop -
                                                                      start)
                    .count()
