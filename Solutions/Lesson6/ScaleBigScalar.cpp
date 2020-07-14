@@ -87,7 +87,9 @@ int main() {
 
   std::cout << "Creating a scalar field of size " << size << "\n";
   start = std::chrono::high_resolution_clock::now();
+
   ScalarField field_a = initialize_scalar_field(size, initial_value);
+  
   stop = std::chrono::high_resolution_clock::now();
   std::cout << gsl::at(field_a.x, size / 2) << " ("
             << std::chrono::duration_cast<std::chrono::microseconds>(stop -
